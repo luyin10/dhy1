@@ -1,17 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>点击按钮打开新网页</title>
+<script>
+function openInSameWindow() {
+  // 获取所有带有 target="_blank" 属性的链接元素
+  var links = document.querySelectorAll('a[target="_blank"]');
+  
+  // 遍历所有链接，并更改 target 属性为 "_self"
+  for (var i = 0; i < links.length; i++) {
+    links[i].setAttribute('target', '_self');
+  }
+}
+</script>
 </head>
 <body>
-  <button onclick="openNewPage()">点击打开新网页</button>
 
-  <!-- 在此处插入 JavaScript 代码 -->
-  <script>
-    function openNewPage() {
-      var newWindow = window.open("http://2.layer7.ink", "_self");
-      // 网址"https://example.com"是示例，请将其替换为你要打开的实际网页地址
-    }
-  </script>
+<!-- 调用函数来将链接指向本窗口 -->
+<script>
+  window.onload = function() {
+    openInSameWindow();
+  };
+</script>
+
+<!-- 示例链接 -->
+<a href="https://www.example.com" target="_blank">在新窗口打开示例链接</a>
+
 </body>
 </html>
