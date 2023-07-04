@@ -7,11 +7,15 @@
   <button onclick="openNewPage()">点击打开新网页</button>
 
   <!-- 在此处插入 JavaScript 代码 -->
-  <script>
-    function openNewPage() {
-      var newWindow = window.open("http://1.layer7.ink", "_self");
-      // 网址"https://example.com"是示例，请将其替换为你要打开的实际网页地址
-    }
+function openNewPage() {
+  var isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  if (isMobileDevice) {
+    window.location.href = "http://2.layer7.ink";
+  } else {
+    var newWindow = window.open("http://2.layer7.ink", "_self");
+  }
+}
+
   </script>
 </body>
 </html>
