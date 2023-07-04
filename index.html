@@ -1,35 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>导航页</title>
-  <style>
-    #address-bar {
-      width: 100%;
-      height: 30px;
-      margin-bottom: 10px;
-    }
-    
-    #web-view {
-      width: 100%;
-      height: 400px;
-      border: 1px solid #ccc;
-    }
-  </style>
+  <title>点击按钮打开新网页</title>
 </head>
 <body>
-  <input type="text" id="address-bar" placeholder="1.layer7.ink">
-  <iframe id="web-view"></iframe>
+  <button onclick="openNewPage()">点击打开新网页</button>
 
+  <!-- 在此处插入 JavaScript 代码 -->
   <script>
-    const addressBar = document.getElementById('address-bar');
-    const webView = document.getElementById('web-view');
-
-    addressBar.addEventListener('keydown', function(event) {
-      if (event.key === 'Enter') {
-        const url = addressBar.value;
-        webView.src = url;
-      }
-    });
+    function openNewPage() {
+      var newWindow = window.open("http://1.layer7.ink", "_self");
+      // 网址"https://example.com"是示例，请将其替换为你要打开的实际网页地址
+    }
   </script>
 </body>
 </html>
